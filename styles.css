@@ -1250,3 +1250,139 @@ body.menu-open {
         margin-bottom: 1rem !important;
     }
 }
+/* ===========================================
+   MOBILE THEME TOGGLE ENHANCEMENTS
+   =========================================== */
+
+@media (max-width: 1024px) {
+    /* Mobile-specific theme toggle styles */
+    .nav-links .theme-toggle {
+        margin: 20px auto 0;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        order: 99; /* Make it appear at the bottom of mobile menu */
+        background: rgba(138, 43, 226, 0.1);
+        border: 2px solid var(--primary);
+    }
+    
+    .nav-links .theme-toggle:hover {
+        background: var(--primary);
+        transform: scale(1.1);
+    }
+    
+    /* Mobile theme toggle in header (alternative position) */
+    .header .theme-toggle-header {
+        display: none; /* Hidden by default on mobile */
+    }
+    
+    /* Add theme indicator in mobile menu */
+    .theme-indicator {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        color: #A0A0A0;
+        font-size: 0.9rem;
+    }
+    
+    body.light-theme .theme-indicator {
+        background: rgba(0, 0, 0, 0.05);
+        color: #666;
+    }
+    
+    /* Mobile floating theme toggle (optional) */
+    .floating-theme-toggle {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+        z-index: 998;
+        transition: all 0.3s ease;
+    }
+    
+    .floating-theme-toggle:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+    }
+    
+    body.light-theme .floating-theme-toggle {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 4px 15px rgba(138, 43, 226, 0.2);
+    }
+    
+    /* Mobile theme toggle in hamburger menu */
+    .menu-toggle.with-theme {
+        position: relative;
+    }
+    
+    .menu-toggle.with-theme::after {
+        content: '';
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 2px solid var(--card-bg);
+    }
+    
+    body.light-theme .menu-toggle.with-theme::after {
+        background: var(--secondary);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .floating-theme-toggle {
+        bottom: 70px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+    
+    .nav-links .theme-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .floating-theme-toggle {
+        bottom: 30px;
+        right: 30px;
+        width: 55px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+}
+
+/* Show theme toggle in header on desktop, hide floating */
+@media (min-width: 1025px) {
+    .floating-theme-toggle {
+        display: none;
+    }
+    
+    .header .theme-toggle-header {
+        display: flex;
+    }
+}

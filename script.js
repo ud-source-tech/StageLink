@@ -803,3 +803,255 @@ document.addEventListener('DOMContentLoaded', function() {
     initFilters();
     initBookingSystem();
 });
+// ===========================================
+// MOBILE THEME TOGGLE FUNCTIONALITY
+// ===========================================
+function initMobileThemeToggle() {
+    console.log("Initializing mobile theme toggle...");
+    
+    // Check if we're on mobile
+    const isMobile = window.innerWidth <= 1024;
+    
+    if (isMobile) {
+        // Create floating theme toggle for mobile
+        createFloatingThemeToggle();
+        
+        // Add theme indicator to mobile menu
+        addThemeIndicatorToMenu();
+        
+        // Add theme toggle to mobile menu header
+        addThemeToggleToMenuHeader();
+    }
+    
+    // Update menu toggle with theme indicator
+    updateMenuToggleWithTheme();
+    
+    // Listen for theme changes
+    document.addEventListener('themeChanged', function(e) {
+        updateThemeIndicators(e.detail.theme);
+    });
+}
+
+function createFloatingThemeToggle() {
+    // Check if floating toggle already exists
+    if (document.getElementById('floatingThemeToggle')) return;
+    
+    const floatingToggle = document.createElement('button');
+    floatingToggle.className = 'floating-theme-toggle';
+    floatingToggle.id = 'floatingThemeToggle';
+    floatingToggle.title = 'Toggle Dark/Light Mode';
+    floatingToggle.innerHTML = '<i class="fas fa-palette"></i>';
+    
+    // Add to body
+    document.body.appendChild(floatingToggle);
+    
+    // Add click event
+    floatingToggle.addEventListener('click', function() {
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.click();
+            
+            // Add animation
+            this.style.transform = 'rotate(180deg) scale(1.1)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 300);
+            
+            // Update icon based on theme
+            setTimeout(() => {
+                const isLight = document.body.classList.contains('light-theme');
+                this.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            }, 300);
+        }
+    });
+    
+    // Update initial icon
+    const isLight = document.body.classList.contains('light-theme');
+    floatingToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+}
+
+function addThemeIndicatorToMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    if (!navLinks) return;
+    
+    // Check if indicator already exists
+    if (document.querySelector('.theme-indicator')) return;
+    
+    const themeIndicator = document.createElement('div');
+    themeIndicator.className = 'theme-indicator';
+    
+    const isLight = document.body.classList.contains('light-theme');
+    themeIndicator.innerHTML = `
+        <i class="fas fa-${isLight ? 'sun' : 'moon'}"></i>
+        <span>${isLight ? 'Light' : 'Dark'} Mode</span>
+        <span style="margin-left: auto; font-size: 0.8rem;">Tap icon to toggle</span>
+    `;
+    
+    // Insert before theme toggle in nav
+    const themeToggle = navLinks.querySelector('.theme-toggle');
+    if (themeToggle) {
+        navLinks.insertBefore(themeIndicator, themeToggle);
+    } else {
+        navLinks.appendChild(themeIndicator);
+    }
+}
+
+function addThemeToggleToMenuHeader() {
+    // Add theme toggle to menu header (optional)
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle) {
+        menuToggle.classList.add('with-theme');
+    }
+}
+
+function updateMenuToggleWithTheme() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!menuToggle) return;
+    
+    // Update menu toggle indicator color based on theme
+    const updateIndicator = () => {
+        const isLight = document.body.classList.contains('light-theme');
+        menuToggle.style.setProperty('--indicator-color', isLight ? 'var(--secondary)' : 'var(--primary)');
+    };
+    
+    // Initial update
+    updateIndicator();
+    
+    // Update when theme changes
+    document.addEventListener('themeChanged', updateIndicator);
+}
+
+function updateThemeIndicators(theme) {
+    const isLight = theme === 'light';
+    
+    // Update floating toggle icon
+    const floatingToggle = document.getElementById('floatingThemeToggle');
+    if (floatingToggle) {
+        floatingToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    }
+    
+    // Update menu indicator text
+    const themeIndicator = document.querySelector('.theme-indicator');
+    if (themeIndicator) {
+        const icon = themeIndicator.querySelector('i');
+        const text = themeIndicator.querySelector('span');
+        
+        if (icon) icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+        if (text) text.textContent = isLight ? 'Light Mode' : 'Dark Mode';
+    }
+    
+    // Update menu toggle indicator
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (menuToggle && menuToggle.classList.contains('with-theme')) {
+        // Indicator color is handled by CSS, but we can add a class
+        menuToggle.classList.toggle('light-theme-active', isLight);
+    }
+}
+
+// ===========================================
+// UPDATE EXISTING THEME TOGGLE FUNCTION
+// ===========================================
+function initThemeToggle() {
+    console.log("Initializing theme toggle...");
+    
+    // Create theme toggle button if it doesn't exist
+    if (!document.getElementById('themeToggle')) {
+        const themeToggle = document.createElement('button');
+        themeToggle.className = 'theme-toggle';
+        themeToggle.id = 'themeToggle';
+        themeToggle.title = 'Toggle Dark/Light Mode';
+        themeToggle.innerHTML = `
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        `;
+        
+        // Add to navigation
+        const nav = document.querySelector('.nav-links');
+        if (nav) {
+            nav.appendChild(themeToggle);
+        }
+    }
+    
+    // Get the toggle button
+    const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) {
+        console.error("Theme toggle button not found!");
+        return;
+    }
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('stageLinkTheme');
+    console.log("Saved theme:", savedTheme);
+    
+    // Check system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+    } else if (savedTheme === 'dark') {
+        document.body.classList.remove('light-theme');
+    } else if (!savedTheme && !prefersDark) {
+        document.body.classList.add('light-theme');
+        localStorage.setItem('stageLinkTheme', 'light');
+    } else {
+        document.body.classList.remove('light-theme');
+        localStorage.setItem('stageLinkTheme', 'dark');
+    }
+    
+    // Dispatch initial theme event
+    const currentTheme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+    document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: currentTheme } }));
+    
+    // Add click event to toggle button
+    themeToggle.addEventListener('click', function() {
+        // Toggle the class
+        document.body.classList.toggle('light-theme');
+        
+        // Check current state
+        const isLightTheme = document.body.classList.contains('light-theme');
+        
+        // Save to localStorage
+        localStorage.setItem('stageLinkTheme', isLightTheme ? 'light' : 'dark');
+        
+        // Dispatch theme change event
+        document.dispatchEvent(new CustomEvent('themeChanged', { 
+            detail: { theme: isLightTheme ? 'light' : 'dark' } 
+        }));
+        
+        // Add animation effect
+        this.style.transform = 'rotate(360deg)';
+        setTimeout(() => {
+            this.style.transform = '';
+        }, 300);
+        
+        // Force a redraw
+        document.body.style.display = 'none';
+        document.body.offsetHeight;
+        document.body.style.display = '';
+    });
+    
+    console.log("Theme toggle initialized successfully");
+}
+
+// ===========================================
+// UPDATE MAIN INITIALIZATION
+// ===========================================
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("StageLink Platform Loaded");
+    
+    // Initialize theme toggle FIRST
+    initThemeToggle();
+    
+    // Initialize mobile theme toggle SECOND
+    initMobileThemeToggle();
+    
+    // Initialize mobile navigation THIRD
+    initMobileNavigation();
+    
+    // Then initialize other functions
+    initAnimations();
+    initTooltips();
+    initFilters();
+    initBookingSystem();
+});
