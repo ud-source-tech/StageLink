@@ -1222,3 +1222,31 @@ body.light-theme .menu-toggle span {
 body.menu-open {
     overflow: hidden;
 }
+/* Quick Mobile CEO Fix */
+@media (max-width: 768px) {
+    /* Make CEO section stack vertically */
+    #story .card > div[style*="grid-template-columns"] {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    /* Center the avatar */
+    #story .card > div > div:first-child {
+        margin-bottom: 2rem !important;
+    }
+    
+    /* Reduce avatar size */
+    #story .card > div > div:first-child > div {
+        width: 150px !important;
+        height: 150px !important;
+        font-size: 3rem !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Adjust text */
+    #story .card h2 {
+        font-size: 1.8rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
