@@ -670,3 +670,136 @@ function addDebugButton() {
     debugBtn.addEventListener('click', testTheme);
     document.body.appendChild(debugBtn);
 }
+// ===========================================
+// MOBILE NAVIGATION FUNCTIONALITY
+// ===========================================
+function initMobileNavigation() {
+    console.log("Initializing mobile navigation...");
+    
+    // Create mobile menu toggle button
+    const menuToggle = document.createElement('button');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.id = 'mobileMenuToggle';
+    menuToggle.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+    `;
+    
+    // Create overlay for mobile menu
+    const menuOverlay = document.createElement('div');
+    menuOverlay.className = 'menu-overlay';
+    menuOverlay.id = 'mobileMenuOverlay';
+    
+    // Add elements to header
+    const header = document.querySelector('.header');
+    if (header) {
+        // Insert menu toggle before nav links
+        const nav = header.querySelector('.nav-links');
+        if (nav) {
+            header.insertBefore(menuToggle, nav);
+            document.body.appendChild(menuOverlay);
+        }
+    }
+    
+    // Create sidebar toggle for dashboard pages
+    if (document.querySelector('.sidebar')) {
+        const sidebarToggle = document.createElement('button');
+        sidebarToggle.className = 'sidebar-toggle';
+        sidebarToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        sidebarToggle.id = 'sidebarToggle';
+        document.body.appendChild(sidebarToggle);
+        
+        sidebarToggle.addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+        
+        // Close sidebar when clicking overlay
+        menuOverlay.addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    }
+    
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        this.classList.toggle('active');
+        document.querySelector('.nav-links').classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+    
+    // Close menu when clicking overlay
+    menuOverlay.addEventListener('click', function() {
+        menuToggle.classList.remove('active');
+        document.querySelector('.nav-links').classList.remove('active');
+        this.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    });
+    
+    // Close menu when clicking a link (for single page apps)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 1024) {
+                menuToggle.classList.remove('active');
+                document.querySelector('.nav-links').classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    });
+    
+    // Close menu on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            menuToggle.classList.remove('active');
+            document.querySelector('.nav-links').classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            
+            // Also close sidebar if open
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) sidebar.classList.remove('active');
+        }
+    });
+    
+    // Handle window resize
+    function handleResize() {
+        if (window.innerWidth > 1024) {
+            // Close mobile menu on desktop
+            menuToggle.classList.remove('active');
+            document.querySelector('.nav-links').classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            
+            // Close sidebar on desktop
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) sidebar.classList.remove('active');
+        }
+    }
+    
+    window.addEventListener('resize', handleResize);
+    
+    console.log("Mobile navigation initialized");
+}
+
+// ===========================================
+// UPDATE MAIN INITIALIZATION
+// ===========================================
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("StageLink Platform Loaded");
+    
+    // Initialize theme toggle FIRST
+    initThemeToggle();
+    
+    // Initialize mobile navigation SECOND
+    initMobileNavigation();
+    
+    // Then initialize other functions
+    initAnimations();
+    initTooltips();
+    initFilters();
+    initBookingSystem();
+});
