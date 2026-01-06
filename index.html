@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StageLink | Global Music Creative Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles for enhanced homepage */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-circle {
+            text-align: center;
+        }
+        
+        .stat-circle div {
+            width: 80px;
+            height: 80px;
+            background: rgba(138, 43, 226, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .testimonial-slider {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .feature-highlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .highlight-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+        
+        .how-it-works {
+            counter-reset: step;
+        }
+        
+        .step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+        
+        .step-number {
+            min-width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+        }
+        
+        .step-number::before {
+            counter-increment: step;
+            content: counter(step);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-link"></i> StageLink
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="browse.html"><i class="fas fa-search"></i> Explore</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="signup.html" class="btn-outline">Join Now</a>
+            <a href="login.html" class="btn">Sign In</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div style="position: relative; z-index: 1;">
+            <h1>Where Music Creatives & Opportunities Connect</h1>
+            <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 2rem;">
+                Book artists, producers, DJs, and music professionals worldwide. 
+                <span style="color: var(--secondary);">Direct booking, secure payments, and global reach.</span>
+            </p>
+            
+            <!-- Trust Badges -->
+            <div class="trust-badges">
+                <div class="badge">
+                    <i class="fas fa-shield-alt" style="color: var(--secondary);"></i>
+                    <span>Secure Escrow Payments</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-globe-africa" style="color: var(--primary);"></i>
+                    <span>50+ Countries</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-check-circle" style="color: #00D4AA;"></i>
+                    <span>Verified Creatives</span>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="signup.html?type=creative" class="btn">
+                    <i class="fas fa-microphone-alt"></i> Join as Creative
+                </a>
+                <a href="browse.html" class="btn-outline">
+                    <i class="fas fa-search"></i> Book Talent
+                </a>
+            </div>
+            
+            <!-- Hero Stats -->
+            <div class="hero-stats">
+                <div class="stat-circle">
+                    <div>2,500+</div>
+                    <p>Creatives</p>
+                </div>
+                <div class="stat-circle">
+                    <div>50+</div>
+                    <p>Countries</p>
+                </div>
+                <div class="stat-circle">
+                    <div>98%</div>
+                    <p>Satisfaction</p>
+                </div>
+                <div class="stat-circle">
+                    <div>$500K+</div>
+                    <p>Booked</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Pattern -->
+        <div style="position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(138, 43, 226, 0.2) 0%, transparent 70%); z-index: 0;"></div>
+        <div style="position: absolute; bottom: 0; left: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0, 212, 170, 0.2) 0%, transparent 70%); z-index: 0;"></div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="container" style="margin-top: 4rem;">
+        <h2 style="text-align: center; margin-bottom: 3rem;">How StageLink Works</h2>
+        
+        <div class="how-it-works">
+            <div class="step">
+                <div class="step-number"></div>
+                <div>
+                    <h3>Create Your Profile</h3>
+                    <p style="color: #A0A0A0;">Artists, DJs, producers — list your services, set your rates, and showcase your portfolio. Get verified and start receiving booking requests.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number"></div>
+                <div>
+                    <h3>Get Discovered & Booked</h3>
+                    <p style="color: #A0A0A0;">Fans, event organizers, and brands browse profiles, check availability, and send booking requests directly. No agents, no middlemen.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number"></div>
+                <div>
+                    <h3>Secure Payment & Perform</h3>
+                    <p style="color: #A0A0A0;">Once booked, payments are held securely in escrow. Deliver your service or perform at the event. Payment released upon completion.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number"></div>
+                <div>
+                    <h3>Build Your Reputation</h3>
+                    <p style="color: #A0A0A0;">Get reviews, build your portfolio, and unlock more opportunities. The better your work, the more you can earn.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="about.html" class="btn-outline">
+                <i class="fas fa-play-circle"></i> Watch Demo Video
+            </a>
+        </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Why Choose StageLink?</h2>
+        
+        <div class="feature-highlight">
+            <div class="highlight-card">
+                <i class="fas fa-globe-africa" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <h3>Global Reach, African Roots</h3>
+                <p style="color: #A0A0A0; margin: 1rem 0;">Built in Lagos, Nigeria by artists for artists. We understand the challenges of the global music industry from an African perspective.</p>
+                <a href="about.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+                    Our Story <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="highlight-card">
+                <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                <h3>Secure & Fair Payments</h3>
+                <p style="color: #A0A0A0; margin: 1rem 0;">Escrow-based system protects both creatives and bookers. Get paid securely, book with confidence. No hidden fees, no surprises.</p>
+                <a href="#" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+                    Learn About Payments <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="highlight-card">
+                <i class="fas fa-bolt" style="font-size: 2.5rem; color: #FFD700; margin-bottom: 1rem;"></i>
+                <h3>Direct Booking System</h3>
+                <p style="color: #A0A0A0; margin: 1rem 0;">No agents, no managers, no gatekeepers. Direct communication and instant booking. Your talent, your terms.</p>
+                <a href="browse.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+                    Browse Creatives <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Creatives Section -->
+    <section class="container" style="background: rgba(138, 43, 226, 0.05); border-radius: var(--radius); padding: 4rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+            <h2 style="margin: 0;">Featured Creatives</h2>
+            <a href="browse.html" class="btn-outline">
+                View All <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        
+        <div class="grid">
+            <!-- Creative Card 1 -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                        DN
+                    </div>
+                    <div>
+                        <h3 style="margin: 0;">DJ Nova</h3>
+                        <p style="color: var(--primary); margin: 0.25rem 0;">⭐ 4.9 (124 reviews)</p>
+                    </div>
+                </div>
+                <p style="color: #A0A0A0; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt"></i> Lagos, Nigeria<br>
+                    <i class="fas fa-music"></i> Afro, EDM, House
+                </p>
+                <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Live Performance</strong><br>
+                    <span style="color: var(--secondary);">From $500</span></p>
+                </div>
+                <a href="profile.html?id=1" class="btn" style="width: 100%; text-align: center;">
+                    <i class="fas fa-eye"></i> View Profile
+                </a>
+            </div>
+            
+            <!-- Creative Card 2 -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #FF6B6B, #FFA726); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                        AB
+                    </div>
+                    <div>
+                        <h3 style="margin: 0;">Alex Beats</h3>
+                        <p style="color: var(--primary); margin: 0.25rem 0;">⭐ 4.8 (89 reviews)</p>
+                    </div>
+                </div>
+                <p style="color: #A0A0A0; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt"></i> Los Angeles, USA<br>
+                    <i class="fas fa-music"></i> Hip Hop, R&B, Pop
+                </p>
+                <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Beat Production</strong><br>
+                    <span style="color: var(--secondary);">$300/track</span></p>
+                </div>
+                <a href="profile.html?id=2" class="btn" style="width: 100%; text-align: center;">
+                    <i class="fas fa-eye"></i> View Profile
+                </a>
+            </div>
+            
+            <!-- Creative Card 3 -->
+            <div class="card">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary), #00BFFF); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                        SV
+                    </div>
+                    <div>
+                        <h3 style="margin: 0;">Sarah Vocalist</h3>
+                        <p style="color: var(--primary); margin: 0.25rem 0;">⭐ 4.9 (67 reviews)</p>
+                    </div>
+                </div>
+                <p style="color: #A0A0A0; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt"></i> Accra, Ghana<br>
+                    <i class="fas fa-music"></i> Jazz, Neo-soul, R&B
+                </p>
+                <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Live Vocals</strong><br>
+                    <span style="color: var(--secondary);">From $350</span></p>
+                </div>
+                <a href="profile.html" class="btn" style="width: 100%; text-align: center;">
+                    <i class="fas fa-eye"></i> View Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container">
+        <h2 style="text-align: center; margin-bottom: 3rem;">What Our Community Says</h2>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-card">
+                <div class="testimonial-avatar">JD</div>
+                <h3>James D.</h3>
+                <p style="color: var(--primary); margin: 0.5rem 0;">Event Organizer • London</p>
+                <p style="font-style: italic; margin: 1.5rem 0;">
+                    "Booked DJ Nova from Lagos for our London festival through StageLink. The process was seamless, and the payment protection gave us peace of mind. Best booking experience ever!"
+                </p>
+                <div style="color: #FFD700;">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="#" class="btn-outline">
+                <i class="fas fa-comment"></i> More Testimonials
+            </a>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="container" style="text-align: center; margin: 6rem 0;">
+        <div class="card" style="padding: 4rem; background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(0, 212, 170, 0.1));">
+            <h2>Ready to Join the Future of Music Booking?</h2>
+            <p style="max-width: 600px; margin: 1.5rem auto; font-size: 1.1rem;">
+                Join thousands of creatives and bookers who are already using StageLink to connect, collaborate, and create amazing experiences worldwide.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+                <a href="signup.html?type=creative" class="btn" style="padding: 1rem 2rem;">
+                    <i class="fas fa-microphone-alt"></i> Join as Creative
+                </a>
+                <a href="signup.html?type=booker" class="btn-outline" style="padding: 1rem 2rem;">
+                    <i class="fas fa-calendar-check"></i> Start Booking
+                </a>
+                <a href="browse.html" class="btn" style="background: transparent; border: 2px solid var(--gray); padding: 1rem 2rem;">
+                    <i class="fas fa-search"></i> Browse Talent
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer (from about page) -->
+    <footer style="text-align: center; padding: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 4rem;">
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <a href="index.html" style="color: var(--primary);">Home</a>
+            <a href="about.html" style="color: #A0A0A0;">About</a>
+            <a href="browse.html" style="color: #A0A0A0;">Browse</a>
+            <a href="#" style="color: #A0A0A0;">Contact</a>
+            <a href="#" style="color: #A0A0A0;">Terms</a>
+            <a href="#" style="color: #A0A0A0;">Privacy</a>
+        </div>
+        
+        <div class="logo" style="margin-bottom: 1.5rem;">
+            <i class="fas fa-link"></i> StageLink
+        </div>
+        
+        <p style="color: #A0A0A0; margin-bottom: 1rem;">
+            Built with ❤️ in Lagos, Nigeria • Serving the world
+        </p>
+        
+        <!-- Social Media Links (from about page) -->
+        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem;">
+            <a href="#" style="color: #A0A0A0; transition: var(--transition);" title="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" style="color: #A0A0A0; transition: var(--transition);" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" style="color: #A0A0A0; transition: var(--transition);" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" style="color: #A0A0A0; transition: var(--transition);" title="Spotify">
+                <i class="fab fa-spotify"></i>
+            </a>
+            <a href="#" style="color: #A0A0A0; transition: var(--transition);" title="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+        
+        <p style="color: #666; margin-top: 2rem; font-size: 0.9rem;">
+            &copy; 2026 StageLink. All rights reserved.<br>
+            Connecting creatives to global opportunities. Made in Africa, for the world.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Enhanced testimonials slider (optional enhancement)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Trust badge animation
+            const badges = document.querySelectorAll('.badge');
+            badges.forEach((badge, index) => {
+                badge.style.animationDelay = `${index * 0.2}s`;
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Creatives | StageLink</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-link"></i> StageLink
+        </div>
+        <nav class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="browse.html" class="active"><i class="fas fa-search"></i> Browse</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <a href="signup.html" class="btn-outline">Join Now</a>
+            <a href="login.html" class="btn">Sign In</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h1>Discover Music Creatives Worldwide</h1>
+        <p>Filter by role, genre, location, and availability to find the perfect match.</p>
+        
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" class="search-input" placeholder="Search creatives, genres, or locations...">
+        </div>
+        
+        <div class="filter-group">
+            <button class="filter-btn active" data-filter="all">All Roles</button>
+            <button class="filter-btn" data-filter="artist">Artists</button>
+            <button class="filter-btn" data-filter="dj">DJs</button>
+            <button class="filter-btn" data-filter="producer">Producers</button>
+            <button class="filter-btn" data-filter="engineer">Engineers</button>
+            <button class="filter-btn" data-filter="writer">Writers</button>
+            <button class="filter-btn" data-filter="vocalist">Vocalists</button>
+        </div>
+        
+        <div class="grid">
+            <!-- Creative Card 1 - DJ Nova -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: var(--gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            DN
+                        </div>
+                        <div>
+                            <h3 style="margin: 0;">DJ Nova</h3>
+                            <p style="color: var(--primary); margin: 0;">⭐ 4.9 (124 reviews)</p>
+                        </div>
+                    </div>
+                    <span class="status-badge status-confirmed">Available</span>
+                </div>
+                
+                <p style="color: #A0A0A0; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt"></i> Lagos, Nigeria<br>
+                    <i class="fas fa-music"></i> Afro, EDM, House
+                </p>
+                
+                <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Live Performance</strong><br>
+                    <span style="color: var(--secondary);">From $500</span></p>
+                </div>
+                
+                <a href="profile.html?id=1" class="btn" style="width: 100%; text-align: center;">View Profile & Book</a>
+            </div>
+            
+            <!-- Creative Card 2 - Alex Beats -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #FF6B6B, #FFA726); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            AB
+                        </div>
+                        <div>
+                            <h3 style="margin: 0;">Alex Beats</h3>
+                            <p style="color: var(--primary); margin: 0;">⭐ 4.8 (89 reviews)</p>
+                        </div>
+                    </div>
+                    <span class="status-badge status-confirmed">Available</span>
+                </div>
+                
+                <p style="color: #A0A0A0; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt"></i> Los Angeles, USA<br>
+                    <i class="fas fa-music"></i> Hip Hop, R&B, Pop
+                </p>
+                
+                <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Beat Production</strong><br>
+                    <span style="color: var(--secondary);">$300/track</span></p>
+                </div>
+                
+                <a href="profile.html?id=2" class="btn" style="width: 100%; text-align: center;">View Profile & Book</a>
+            </div>
+            
+            <!-- Creative Card 3 - Sarah Vocalist (NEW) -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--secondary), #00BFFF); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            SV
+                        </div>
+                        <div>
+                            <h3 style="margin: 0;">Sarah Vocalist</h3>
+                            <p style="color: var(--primary); margin: 0;">⭐ 4.9 (67 reviews)</p>
+                        </div>
+                    </div>
+                    <span class="status-badge status-confirmed">Available</span>
+                </div>
+                
+                <p style="color: #A0A0A0; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt"></i> Accra, Ghana<br>
+                    <i class="fas fa-music"></i> Jazz, Neo-soul, R&B
+                </p>
+                
+                <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Live Vocals</strong><br>
+                    <span style="color: var(--secondary);">From $350</span></p>
+                </div>
+                
+                <a href="profile.html?id=3" class="btn" style="width: 100%; text-align: center;">View Profile & Book</a>
+            </div>
+            
+            <!-- Creative Card 4 - Mike Producer -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #FF6B6B, #FFA726); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            MP
+                        </div>
+                        <div>
+                            <h3 style="margin: 0;">Mike Producer</h3>
+                            <p style="color: var(--primary); margin: 0;">⭐ 4.6 (42 reviews)</p>
+                        </div>
+                    </div>
+                    <span class="status-badge status-pending">Booked until Aug</span>
+                </div>
+                
+                <p style="color: #A0A0A0; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt"></i> Johannesburg, SA<br>
+                    <i class="fas fa-music"></i> Amapiano, Afro House
+                </p>
+                
+                <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Production & Mixing</strong><br>
+                    <span style="color: var(--secondary);">$250/song</span></p>
+                </div>
+                
+                <a href="profile.html" class="btn" style="width: 100%; text-align: center; background: var(--gray);">Notify When Available</a>
+            </div>
+            
+            <!-- Creative Card 5 - Lisa Engineer -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--secondary), #00BFFF); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            LE
+                        </div>
+                        <div>
+                            <h3 style="margin: 0;">Lisa Engineer</h3>
+                            <p style="color: var(--primary); margin: 0;">⭐ 4.9 (89 reviews)</p>
+                        </div>
+                    </div>
+                    <span class="status-badge status-confirmed">Available</span>
+                </div>
+                
+                <p style="color: #A0A0A0; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt"></i> Nairobi, Kenya<br>
+                    <i class="fas fa-music"></i> Mixing, Mastering
+                </p>
+                
+                <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Mixing & Mastering</strong><br>
+                    <span style="color: var(--secondary);">$180/song</span></p>
+                </div>
+                
+                <a href="profile.html" class="btn" style="width: 100%; text-align: center;">View Profile & Book</a>
+            </div>
+            
+            <!-- Creative Card 6 - Tunde Writer -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #8A2BE2, #9370DB); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            TW
+                        </div>
+                        <div>
+                            <h3 style="margin: 0;">Tunde Writer</h3>
+                            <p style="color: var(--primary); margin: 0;">⭐ 4.7 (56 reviews)</p>
+                        </div>
+                    </div>
+                    <span class="status-badge status-confirmed">Available</span>
+                </div>
+                
+                <p style="color: #A0A0A0; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt"></i> Abuja, Nigeria<br>
+                    <i class="fas fa-music"></i> Songwriting, Lyrics
+                </p>
+                
+                <div style="background: rgba(138, 43, 226, 0.1); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="margin: 0;"><strong>Songwriting</strong><br>
+                    <span style="color: var(--secondary);">$150/song</span></p>
+                </div>
+                
+                <a href="profile.html" class="btn" style="width: 100%; text-align: center;">View Profile & Book</a>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 3rem;">
+            <button class="btn-outline" style="padding: 0.5rem 1rem;">
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <button class="btn" style="padding: 0.5rem 1rem;">1</button>
+            <button class="btn-outline" style="padding: 0.5rem 1rem;">2</button>
+            <button class="btn-outline" style="padding: 0.5rem 1rem;">3</button>
+            <button class="btn-outline" style="padding: 0.5rem 1rem;">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <!-- Browse Stats -->
+        <div style="margin-top: 4rem; padding: 2rem; background: rgba(138, 43, 226, 0.05); border-radius: var(--radius);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; text-align: center;">
+                <div>
+                    <h3 style="color: var(--primary); margin: 0;">2,500+</h3>
+                    <p style="color: #A0A0A0; margin: 0.5rem 0;">Active Creatives</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--secondary); margin: 0;">50+</h3>
+                    <p style="color: #A0A0A0; margin: 0.5rem 0;">Countries</p>
+                </div>
+                <div>
+                    <h3 style="color: #FFD700; margin: 0;">4.8</h3>
+                    <p style="color: #A0A0A0; margin: 0.5rem 0;">Avg. Rating</p>
+                </div>
+                <div>
+                    <h3 style="color: #00BFFF; margin: 0;">98%</h3>
+                    <p style="color: #A0A0A0; margin: 0.5rem 0;">Response Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="text-align: center; padding: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 4rem;">
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <a href="index.html" style="color: #A0A0A0;">Home</a>
+            <a href="about.html" style="color: #A0A0A0;">About</a>
+            <a href="browse.html" style="color: var(--primary);">Browse</a>
+            <a href="#" style="color: #A0A0A0;">Contact</a>
+            <a href="#" style="color: #A0A0A0;">Terms</a>
+            <a href="#" style="color: #A0A0A0;">Privacy</a>
+        </div>
+        
+        <div class="logo" style="margin-bottom: 1.5rem;">
+            <i class="fas fa-link"></i> StageLink
+        </div>
+        
+        <p style="color: #A0A0A0; margin-bottom: 1rem;">
+            Built with ❤️ in Lagos, Nigeria • Serving the world
+        </p>
+        
+        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem;">
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-spotify"></i></a>
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <p style="color: #666; margin-top: 2rem; font-size: 0.9rem;">
+            &copy; 2024 StageLink. All rights reserved.<br>
+            Connecting creatives to global opportunities.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Enhanced filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const creativeCards = document.querySelectorAll('.card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.filter;
+                    
+                    // Show/hide cards based on filter
+                    creativeCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            // In a real app, this would check card data attributes
+                            // For demo, we'll simulate filtering
+                            const randomShow = Math.random() > 0.3;
+                            card.style.display = randomShow ? 'block' : 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.querySelector('.search-input');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                creativeCards.forEach(card => {
+                    const cardText = card.textContent.toLowerCase();
+                    if (cardText.includes(searchTerm) || searchTerm === '') {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

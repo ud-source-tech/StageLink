@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join StageLink</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-wave-square"></i> StageLink
+        </div>
+        <nav class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="login.html">Already have an account?</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div style="max-width: 500px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h1>Join the Global Music Community</h1>
+                <p style="color: #A0A0A0;">Create your account in less than 2 minutes</p>
+            </div>
+
+            <div class="form-container">
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label>I want to join as:</label>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <label style="flex: 1; text-align: center; cursor: pointer;">
+                                <input type="radio" name="role" value="creative" checked style="display: none;">
+                                <div class="card" style="padding: 1.5rem; border: 2px solid var(--primary);">
+                                    <i class="fas fa-microphone-alt" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                                    <h3>Creative</h3>
+                                    <p style="font-size: 0.9rem;">Artist, DJ, Producer, etc.</p>
+                                </div>
+                            </label>
+                            
+                            <label style="flex: 1; text-align: center; cursor: pointer;">
+                                <input type="radio" name="role" value="booker" style="display: none;">
+                                <div class="card" style="padding: 1.5rem; border: 2px solid rgba(255, 255, 255, 0.1);">
+                                    <i class="fas fa-calendar-check" style="font-size: 2rem; color: #A0A0A0; margin-bottom: 1rem;"></i>
+                                    <h3>Booker</h3>
+                                    <p style="font-size: 0.9rem;">Fan, Promoter, Brand</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Create a strong password" required>
+                        <p style="color: #A0A0A0; font-size: 0.9rem; margin-top: 0.5rem;">
+                            <i class="fas fa-info-circle"></i> Must be at least 8 characters
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location (Optional)</label>
+                        <input type="text" class="form-control" placeholder="City, Country">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" required>
+                            I agree to the <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%; padding: 1rem;">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+
+                    <div style="text-align: center; margin-top: 2rem; color: #A0A0A0;">
+                        <p>Already have an account? <a href="login.html" style="color: var(--primary);">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; color: #A0A0A0;">
+                <p><i class="fas fa-shield-alt"></i> Your data is secure and encrypted</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

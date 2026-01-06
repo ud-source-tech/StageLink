@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Dashboard | StageLink</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-wave-square"></i> StageLink
+        </div>
+        <nav class="nav-links">
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="position: relative;">
+                    <i class="fas fa-bell" style="font-size: 1.2rem; cursor: pointer;"></i>
+                    <span style="position: absolute; top: -5px; right: -5px; background: var(--secondary); color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">3</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                    <div style="width: 35px; height: 35px; background: var(--gradient); border-radius: 50%;"></div>
+                    <span>DJ Nova</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="dashboard-creative.html" class="active">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+                <a href="profile.html">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+                <a href="booking.html">
+                    <i class="fas fa-calendar-check"></i> Bookings
+                </a>
+                <a href="messages.html">
+                    <i class="fas fa-comments"></i> Messages
+                    <span style="margin-left: auto; background: var(--primary); color: white; width: 20px; height: 20px; border-radius: 50%; font-size: 0.7rem; display: flex; align-items: center; justify-content: center;">2</span>
+                </a>
+                <a href="#">
+                    <i class="fas fa-wallet"></i> Earnings
+                </a>
+                <a href="#">
+                    <i class="fas fa-chart-line"></i> Analytics
+                </a>
+                <a href="#">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+                <a href="#" onclick="Auth.logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <h1>Welcome back, DJ Nova!</h1>
+            <p style="color: #A0A0A0; margin-bottom: 2rem;">Here's what's happening with your account today.</p>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-calendar-alt" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>4</h3>
+                    <p>Upcoming Bookings</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-dollar-sign" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                    <h3>$2,400</h3>
+                    <p>Pending Earnings</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star" style="font-size: 2rem; color: #FFD700; margin-bottom: 1rem;"></i>
+                    <h3>4.9</h3>
+                    <p>Average Rating</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-eye" style="font-size: 2rem; color: #00BFFF; margin-bottom: 1rem;"></i>
+                    <h3>156</h3>
+                    <p>Profile Views</p>
+                </div>
+            </div>
+
+            <!-- Recent Bookings -->
+            <h2 style="margin: 2rem 0 1rem;">Recent Booking Requests</h2>
+            <div class="booking-card">
+                <div class="booking-info">
+                    <h4>Summer Festival Main Stage</h4>
+                    <div class="booking-meta">
+                        <span><i class="fas fa-calendar"></i> July 20, 2024</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Miami, USA</span>
+                        <span><i class="fas fa-dollar-sign"></i> $1,500</span>
+                    </div>
+                </div>
+                <div class="booking-actions">
+                    <button class="btn" style="padding: 0.5rem 1.5rem;">
+                        <i class="fas fa-check"></i> Accept
+                    </button>
+                    <button class="btn-outline" style="padding: 0.5rem 1.5rem;">
+                        <i class="fas fa-times"></i> Decline
+                    </button>
+                </div>
+            </div>
+
+            <div class="booking-card">
+                <div class="booking-info">
+                    <h4>Private Wedding DJ Set</h4>
+                    <div class="booking-meta">
+                        <span><i class="fas fa-calendar"></i> August 5, 2024</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Virtual Event</span>
+                        <span><i class="fas fa-dollar-sign"></i> $300</span>
+                    </div>
+                </div>
+                <div class="booking-actions">
+                    <button class="btn" style="padding: 0.5rem 1.5rem;">
+                        <i class="fas fa-check"></i> Accept
+                    </button>
+                    <button class="btn-outline" style="padding: 0.5rem 1.5rem;">
+                        <i class="fas fa-times"></i> Decline
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <h2 style="margin: 3rem 0 1rem;">Quick Actions</h2>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-edit" style="font-size: 2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Update Profile</h3>
+                    <p>Add new portfolio items or update your services</p>
+                    <button class="btn-outline" style="margin-top: 1rem;">Edit Profile</button>
+                </div>
+                <div class="card">
+                    <i class="fas fa-calendar-plus" style="font-size: 2rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                    <h3>Set Availability</h3>
+                    <p>Update your calendar for upcoming months</p>
+                    <button class="btn-outline" style="margin-top: 1rem;">Update Calendar</button>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chart-bar" style="font-size: 2rem; color: #FFD700; margin-bottom: 1rem;"></i>
+                    <h3>View Analytics</h3>
+                    <p>See your profile performance and insights</p>
+                    <button class="btn-outline" style="margin-top: 1rem;">View Stats</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Simulate logout function
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

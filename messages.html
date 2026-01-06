@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages | StageLink</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-wave-square"></i> StageLink
+        </div>
+        <nav class="nav-links">
+            <a href="dashboard-creative.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+            <a href="index.html" class="btn-outline">Home</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        </nav>
+    </header>
+
+    <section class="container chat-container">
+        <!-- Conversations Sidebar -->
+        <aside class="chat-sidebar">
+            <div style="padding: 1.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="margin: 0;">Messages</h3>
+                <input type="text" placeholder="Search messages..." style="width: 100%; margin-top: 1rem; padding: 0.5rem; background: rgba(255, 255, 255, 0.05); border: none; border-radius: 4px; color: white;">
+            </div>
+            
+            <div class="message-item unread">
+                <div class="message-header">
+                    <span class="message-sender">Summer Fest Team</span>
+                    <span class="message-time">10 min ago</span>
+                </div>
+                <div class="message-preview">
+                    Hi! We'd like to book you for our main stage...
+                </div>
+            </div>
+            
+            <div class="message-item">
+                <div class="message-header">
+                    <span class="message-sender">Alex Beats</span>
+                    <span class="message-time">2 hours ago</span>
+                </div>
+                <div class="message-preview">
+                    Got the files. Will start working on the mix tomorrow...
+                </div>
+            </div>
+            
+            <div class="message-item">
+                <div class="message-header">
+                    <span class="message-sender">Wedding Planner</span>
+                    <span class="message-time">1 day ago</span>
+                </div>
+                <div class="message-preview">
+                    Thanks for confirming! Sending the schedule...
+                </div>
+            </div>
+        </aside>
+
+        <!-- Chat Area -->
+        <main class="chat-messages">
+            <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1rem; margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <div style="width: 50px; height: 50px; background: var(--gradient); border-radius: 50%;"></div>
+                    <div>
+                        <h3 style="margin: 0;">Summer Fest Team</h3>
+                        <p style="color: var(--secondary); margin: 0.25rem 0;">⭐ 4.8 • 15 mutual bookings</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="flex: 1; overflow-y: auto; padding-right: 1rem;">
+                <!-- Received Message -->
+                <div class="message-bubble received">
+                    <p>Hi DJ Nova! We're organizing the Summer Fest and would love to have you on our main stage. Are you available July 20th?</p>
+                    <span style="font-size: 0.8rem; color: #A0A0A0; display: block; margin-top: 0.5rem;">10:24 AM</span>
+                </div>
+
+                <!-- Sent Message -->
+                <div class="message-bubble sent">
+                    <p>Hi! Yes, July 20th works for me. What's the event duration and what's your budget?</p>
+                    <span style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); display: block; margin-top: 0.5rem;">10:30 AM • Read</span>
+                </div>
+
+                <!-- Received Message -->
+                <div class="message-bubble received">
+                    <p>Great! The set would be 2 hours, main stage slot 9-11 PM. Our budget is $1,500. We can handle travel and accommodation.</p>
+                    <span style="font-size: 0.8rem; color: #A0A0A0; display: block; margin-top: 0.5rem;">10:32 AM</span>
+                </div>
+
+                <!-- Sent Message -->
+                <div class="message-bubble sent">
+                    <p>That sounds perfect. I accept! Please send the official booking request through the platform so we can secure the date.</p>
+                    <span style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.7); display: block; margin-top: 0.5rem;">10:35 AM • Read</span>
+                </div>
+
+                <!-- Received Message -->
+                <div class="message-bubble received">
+                    <p>Booking request sent! You should see it in your dashboard. Looking forward to having you!</p>
+                    <span style="font-size: 0.8rem; color: #A0A0A0; display: block; margin-top: 0.5rem;">10:40 AM</span>
+                </div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button class="btn">
+                    <i class="fas fa-paper-plane"></i> Send
+                </button>
+            </div>
+        </main>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

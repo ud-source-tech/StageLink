@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About StageLink | Our Story</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* About Page Specific Styles */
+        .story-timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid var(--darker);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .team-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+        }
+        
+        .mission-section {
+            background: rgba(138, 43, 226, 0.05);
+            border-radius: var(--radius);
+            padding: 4rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .african-pattern {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .african-pattern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(138,43,226,0.03)"/></svg>');
+            opacity: 0.5;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-link"></i> StageLink
+        </div>
+        <nav class="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="browse.html"><i class="fas fa-search"></i> Browse</a>
+            <a href="about.html" class="active"><i class="fas fa-info-circle"></i> About</a>
+            <a href="signup.html" class="btn-outline">Join Now</a>
+            <a href="login.html" class="btn">Sign In</a>
+        </nav>
+    </header>
+
+    <section class="container african-pattern">
+        <!-- Hero Section -->
+        <div class="hero" style="padding: 4rem 0;">
+            <h1>Our Story: Connecting Africa to the World</h1>
+            <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.3rem;">
+                From Lagos to the world, StageLink is revolutionizing how music creatives connect, collaborate, and get booked globally.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#story" class="btn">
+                    <i class="fas fa-book-open"></i> Read Our Story
+                </a>
+                <a href="#team" class="btn-outline">
+                    <i class="fas fa-users"></i> Meet The Team
+                </a>
+            </div>
+        </div>
+
+        <!-- Founder's Story -->
+        <div id="story" style="margin: 6rem 0;">
+            <div class="card" style="padding: 3rem; position: relative;">
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center;">
+                    <div style="text-align: center;">
+                        <div style="width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; background: linear-gradient(135deg, var(--primary), #FF6B6B); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white; font-weight: bold;">
+                            UD
+                        </div>
+                        <h3 style="margin-top: 1rem;">"UD"</h3>
+                        <p style="color: var(--primary);">Founder & CEO</p>
+                        <p style="color: #A0A0A0;">Artist × Tech Geek</p>
+                    </div>
+                    <div>
+                        <h2>The African Dream That Became Reality</h2>
+                        <p style="font-size: 1.1rem; line-height: 1.8; margin: 1.5rem 0;">
+                            StageLink was born from a simple, frustrating reality that I faced as an African artist. Too many times, I watched incredible talent from my continent miss global opportunities because of broken systems, unnecessary gatekeepers, and geographical barriers.
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.8;">
+                            As both a musician performing under the stage name <strong>UD</strong> and a tech enthusiast, I saw an opportunity to bridge worlds. Late nights coding in Lagos, between studio sessions and performances, the vision for StageLink took shape — a platform where talent is the only currency that matters.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <h2 style="text-align: center; margin: 4rem 0;">Our Journey</h2>
+        <div class="story-timeline">
+            <div class="timeline-item">
+                <h3>🎵 The Frustration Phase</h3>
+                <p style="color: #A0A0A0; margin: 0.5rem 0 1rem;">Lagos, Nigeria • 2022</p>
+                <p>After missing yet another international booking due to agent complications, UD started sketching the first wireframes on his phone backstage at a Lagos music festival. The concept was simple: "What if artists could book artists directly?"</p>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>👨‍💻 The Tech Pivot</h3>
+                <p style="color: #A0A0A0; margin: 0.5rem 0 1rem;">Lagos Tech Hub • 2023</p>
+                <p>UD partnered with his longtime friend and tech wizard, Ebenizer, who saw the potential immediately. Together, they assembled a small but mighty team of Nigerian developers who believed in the vision. The first lines of code were written in a small apartment overlooking the Lagos skyline.</p>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>🚀 The Lagos Launch</h3>
+                <p style="color: #A0A0A0; margin: 0.5rem 0 1rem;">Yaba, Lagos • Early 2024</p>
+                <p>We launched StageLink with just 50 local artists and DJs. Within weeks, we had our first international booking—a Nigerian producer booked for a studio session in London. The validation was clear: the world was ready for direct creative connections.</p>
+            </div>
+            
+            <div class="timeline-item">
+                <h3>🌍 Going Global</h3>
+                <p style="color: #A0A0A0; margin: 0.5rem 0 1rem;">Present Day</p>
+                <p>Today, StageLink connects thousands of creatives across 50+ countries. From Afrobeat producers in Accra to jazz musicians in New Orleans, our platform proves that great talent knows no borders. And it all started with one artist's frustration in Lagos.</p>
+            </div>
+        </div>
+
+        <!-- Mission Statement -->
+        <div class="mission-section">
+            <h2>Our Mission</h2>
+            <p style="max-width: 700px; margin: 1.5rem auto; font-size: 1.2rem; line-height: 1.8;">
+                To democratize the global music industry by creating direct connections between creatives and opportunities, eliminating unnecessary middlemen, and proving that the best talent can come from anywhere—starting with Africa.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <i class="fas fa-globe-africa" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h4>African Roots</h4>
+                    <p>Built with African ingenuity</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-handshake" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                    <h4>Direct Connections</h4>
+                    <p>No agents, no gatekeepers</p>
+                </div>
+                <div style="text-align: center;">
+                    <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: #FFD700; margin-bottom: 1rem;"></i>
+                    <h4>Secure & Fair</h4>
+                    <p>Escrow payments protect everyone</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <h2 id="team" style="text-align: center; margin: 4rem 0 2rem;">The Lagos Dream Team</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="team-avatar" style="background: linear-gradient(135deg, var(--primary), #FF6B6B); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold;">
+                    UD
+                </div>
+                <h3>"UD"</h3>
+                <p style="color: var(--primary); margin: 0.5rem 0;">Founder & CEO</p>
+                <p style="color: #A0A0A0; font-size: 0.9rem;">
+                    Afrobeat artist by night, code warrior by day. 10+ years in music, 5+ years in tech. Believes technology should serve creativity.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <i class="fab fa-spotify" style="color: #1DB954;"></i>
+                    <i class="fab fa-instagram" style="color: #E1306C; margin-left: 0.5rem;"></i>
+                    <i class="fab fa-twitter" style="color: #1DA1F2; margin-left: 0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-avatar" style="background: linear-gradient(135deg, var(--secondary), #00BFFF); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold;">
+                    E
+                </div>
+                <h3>Eben</h3>
+                <p style="color: var(--secondary); margin: 0.5rem 0;">CTO & Co-founder</p>
+                <p style="color: #A0A0A0; font-size: 0.9rem;">
+                    Full-stack wizard from Lagos. Met UD at a tech meetup. Built the entire StageLink backend while listening to Fela Kuti on repeat.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <i class="fab fa-github"></i>
+                    <i class="fab fa-linkedin" style="color: #0077B5; margin-left: 0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-avatar" style="background: linear-gradient(135deg, #FFD700, #FFA726); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold;">
+                    C
+                </div>
+                <h3>Chioma</h3>
+                <p style="color: #FFD700; margin: 0.5rem 0;">Head of Design</p>
+                <p style="color: #A0A0A0; font-size: 0.9rem;">
+                    UI/UX designer who makes complex systems feel simple. Nigerian visual artist turned digital designer. Loves merging African patterns with modern tech.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <i class="fas fa-palette" style="color: #6C5CE7;"></i>
+                    <i class="fab fa-behance" style="color: #0057FF; margin-left: 0.5rem;"></i>
+                </div>
+            </div>
+            
+            <div class="team-card">
+                <div class="team-avatar" style="background: linear-gradient(135deg, #00D4AA, #00BFA5); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; font-weight: bold;">
+                    T
+                </div>
+                <h3>Tunde</h3>
+                <p style="color: #00D4AA; margin: 0.5rem 0;">Community Lead</p>
+                <p style="color: #A0A0A0; font-size: 0.9rem;">
+                    Former event promoter who knows every artist in Lagos. Convinced the first 100 artists to join StageLink. The "human API" of African music.
+                </p>
+                <div style="margin-top: 1rem;">
+                    <i class="fas fa-microphone-alt" style="color: var(--primary);"></i>
+                    <i class="fas fa-calendar-alt" style="color: var(--secondary); margin-left: 0.5rem;"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">2,500+</div>
+                <p>Creatives Worldwide</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <p>Countries</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$500K+</div>
+                <p>Bookings Processed</p>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <p>Satisfaction Rate</p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="card" style="text-align: center; padding: 4rem; margin: 4rem 0; background: linear-gradient(135deg, rgba(138, 43, 226, 0.1), rgba(0, 212, 170, 0.1));">
+            <h2>Join the Movement</h2>
+            <p style="max-width: 600px; margin: 1.5rem auto; font-size: 1.1rem;">
+                Whether you're an artist in Accra, a producer in Johannesburg, or a booker in London — StageLink is building the future of music connections, one direct booking at a time.
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+                <a href="signup.html?type=creative" class="btn" style="padding: 1rem 2rem;">
+                    <i class="fas fa-microphone-alt"></i> Join as Creative
+                </a>
+                <a href="signup.html?type=booker" class="btn-outline" style="padding: 1rem 2rem;">
+                    <i class="fas fa-calendar-check"></i> Start Booking
+                </a>
+                <a href="browse.html" class="btn" style="background: transparent; border: 2px solid var(--gray); padding: 1rem 2rem;">
+                    <i class="fas fa-search"></i> Explore Talent
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 3rem; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 4rem;">
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+            <a href="index.html" style="color: #A0A0A0;">Home</a>
+            <a href="about.html" style="color: var(--primary);">About</a>
+            <a href="browse.html" style="color: #A0A0A0;">Browse</a>
+            <a href="#" style="color: #A0A0A0;">Contact</a>
+            <a href="#" style="color: #A0A0A0;">Terms</a>
+            <a href="#" style="color: #A0A0A0;">Privacy</a>
+        </div>
+        
+        <div class="logo" style="margin-bottom: 1.5rem;">
+            <i class="fas fa-link"></i> StageLink
+        </div>
+        
+        <p style="color: #A0A0A0; margin-bottom: 1rem;">
+            Built with ❤️ in Lagos, Nigeria • Serving the world
+        </p>
+        
+        <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem;">
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-twitter"></i></a>
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-spotify"></i></a>
+            <a href="#" style="color: #A0A0A0;"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <p style="color: #666; margin-top: 2rem; font-size: 0.9rem;">
+            &copy; 2026 StageLink. All rights reserved.<br>
+            Connecting Africa to the global music stage.
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

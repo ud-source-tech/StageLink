@@ -1,0 +1,868 @@
+:root {
+    --primary: #8A2BE2;
+    --primary-dark: #6A0DAD;
+    --secondary: #00D4AA;
+    --dark: #121212;
+    --darker: #0A0A0A;
+    --light: #F8F9FA;
+    --gray: #2D2D2D;
+    --card-bg: #1E1E1E;
+    --gradient: linear-gradient(135deg, #8A2BE2 0%, #00D4AA 100%);
+    --shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+    --radius: 16px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background: var(--darker);
+    color: var(--light);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+}
+
+.nav-links a:hover {
+    background: rgba(138, 43, 226, 0.1);
+    color: var(--primary);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(138, 43, 226, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Container & Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+.hero {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #A0A0A0;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+/* Card Styles */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(138, 43, 226, 0.3);
+}
+
+.card h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 500px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #A0A0A0;
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
+}
+
+/* Search & Filter */
+.search-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1.2rem 1.2rem 1.2rem 3.5rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary);
+}
+
+.filter-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: #A0A0A0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Status Indicators */
+.status-badge {
+    display: inline-block;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-confirmed {
+    background: rgba(0, 212, 170, 0.1);
+    color: var(--secondary);
+}
+
+.status-pending {
+    background: rgba(255, 193, 7, 0.1);
+    color: #FFC107;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+}
+
+
+
+
+/* Dashboard Specific Styles */
+.dashboard {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    min-height: calc(100vh - 80px);
+}
+
+/* Sidebar */
+.sidebar {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    height: fit-content;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-nav a {
+    padding: 1rem;
+    color: #A0A0A0;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+    background: rgba(138, 43, 226, 0.1);
+    color: var(--primary);
+}
+
+.sidebar-nav i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+    padding: 2rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+/* Booking Card */
+.booking-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.booking-card:hover {
+    transform: translateX(5px);
+}
+
+.booking-info h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.booking-meta {
+    display: flex;
+    gap: 1rem;
+    color: #A0A0A0;
+    font-size: 0.9rem;
+}
+
+.booking-actions {
+    display: flex;
+    gap: 0.8rem;
+}
+
+/* Messages */
+.message-list {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.message-item {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.message-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.message-item.unread {
+    background: rgba(138, 43, 226, 0.05);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.message-sender {
+    font-weight: 600;
+    color: white;
+}
+
+.message-time {
+    color: #A0A0A0;
+    font-size: 0.9rem;
+}
+
+.message-preview {
+    color: #A0A0A0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Chat Container */
+.chat-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    height: calc(100vh - 200px);
+}
+
+.chat-sidebar {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.chat-messages {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-bubble {
+    max-width: 70%;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 18px;
+    position: relative;
+}
+
+.message-bubble.sent {
+    background: var(--primary);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.message-bubble.received {
+    background: var(--gray);
+    color: white;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: white;
+}
+
+
+/* Light Theme Variables */
+body.light-theme {
+    --dark: #ffffff;
+    --darker: #f5f5f5;
+    --light: #121212;
+    --card-bg: #ffffff;
+    --gray: #e0e0e0;
+    background: var(--darker);
+    color: var(--light);
+}
+
+body.light-theme .header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .form-control {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+body.light-theme .form-control:focus {
+    border-color: var(--primary);
+    background: white;
+}
+
+body.light-theme .nav-links a {
+    color: #333;
+}
+
+body.light-theme .btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+body.light-theme .btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+body.light-theme .status-badge {
+    color: #333;
+}
+
+body.light-theme .status-confirmed {
+    background: rgba(0, 212, 170, 0.15);
+}
+
+body.light-theme .status-pending {
+    background: rgba(255, 193, 7, 0.15);
+}
+
+body.light-theme .search-input {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+body.light-theme .filter-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #666;
+}
+
+body.light-theme .filter-btn.active,
+body.light-theme .filter-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    margin-left: 1rem;
+}
+
+body.light-theme .theme-toggle {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    color: white;
+    transform: rotate(30deg);
+}
+
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+body.light-theme .theme-toggle .fa-moon {
+    display: none;
+}
+
+body.light-theme .theme-toggle .fa-sun {
+    display: block;
+}
+
+/* ===========================================
+   LIGHT THEME STYLES
+   =========================================== */
+
+/* Light Theme Variables */
+body.light-theme {
+    --primary: #8A2BE2;
+    --primary-dark: #6A0DAD;
+    --secondary: #00D4AA;
+    --dark: #ffffff;           /* Changed from #121212 to white */
+    --darker: #f8f9fa;         /* Light background */
+    --light: #121212;          /* Dark text on light mode */
+    --gray: #e0e0e0;
+    --card-bg: #ffffff;
+    --gradient: linear-gradient(135deg, #8A2BE2 0%, #00D4AA 100%);
+    --shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
+    background: var(--darker);
+    color: var(--light);
+}
+
+/* Light Theme Header */
+body.light-theme .header {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .logo {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Light Theme Navigation */
+body.light-theme .nav-links a {
+    color: #333;
+}
+
+body.light-theme .nav-links a:hover {
+    background: rgba(138, 43, 226, 0.1);
+    color: var(--primary);
+}
+
+/* Light Theme Cards */
+body.light-theme .card {
+    background: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .card:hover {
+    border-color: rgba(138, 43, 226, 0.3);
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.15);
+}
+
+body.light-theme .card::before {
+    background: var(--gradient);
+}
+
+/* Light Theme Buttons */
+body.light-theme .btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+body.light-theme .btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Light Theme Form Elements */
+body.light-theme .form-control {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+body.light-theme .form-control:focus {
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1);
+}
+
+/* Light Theme Search */
+body.light-theme .search-input {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+/* Light Theme Filters */
+body.light-theme .filter-btn {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #666;
+}
+
+body.light-theme .filter-btn.active,
+body.light-theme .filter-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* Light Theme Status Badges */
+body.light-theme .status-badge {
+    color: #333;
+}
+
+body.light-theme .status-confirmed {
+    background: rgba(0, 212, 170, 0.15);
+    color: #007a63;
+}
+
+body.light-theme .status-pending {
+    background: rgba(255, 193, 7, 0.15);
+    color: #997404;
+}
+
+/* Light Theme Dashboard */
+body.light-theme .sidebar {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .sidebar-nav a {
+    color: #666;
+}
+
+body.light-theme .sidebar-nav a:hover,
+body.light-theme .sidebar-nav a.active {
+    background: rgba(138, 43, 226, 0.1);
+    color: var(--primary);
+}
+
+body.light-theme .booking-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .message-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .message-item:hover {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Light Theme Chat */
+body.light-theme .chat-container {
+    background: white;
+}
+
+body.light-theme .message-bubble.received {
+    background: #f0f0f0;
+    color: #333;
+}
+
+/* ===========================================
+   THEME TOGGLE BUTTON
+   =========================================== */
+.theme-toggle {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    font-size: 1.1rem;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    color: white;
+    transform: rotate(30deg);
+}
+
+/* Hide sun icon by default, show moon */
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+.theme-toggle .fa-moon {
+    display: block;
+}
+
+/* In light theme: hide moon, show sun */
+body.light-theme .theme-toggle .fa-moon {
+    display: none;
+}
+
+body.light-theme .theme-toggle .fa-sun {
+    display: block;
+    color: #FFD700; /* Gold color for sun */
+}
+
+body.light-theme .theme-toggle {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+body.light-theme .theme-toggle:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* ===========================================
+   SMOOTH THEME TRANSITIONS
+   =========================================== */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body * {
+    transition: background-color 0.3s ease, 
+                border-color 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease !important;
+}

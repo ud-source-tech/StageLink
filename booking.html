@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Request | StageLink</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-wave-square"></i> StageLink
+        </div>
+        <nav class="nav-links">
+            <a href="browse.html"><i class="fas fa-arrow-left"></i> Back</a>
+            <a href="dashboard-booker.html" class="btn-outline">Dashboard</a>
+            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <!-- Progress Steps -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem; position: relative;">
+                <div style="flex: 1; text-align: center;">
+                    <div style="width: 40px; height: 40px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">
+                        1
+                    </div>
+                    <p>Details</p>
+                </div>
+                <div style="flex: 1; height: 2px; background: var(--primary);"></div>
+                <div style="flex: 1; text-align: center;">
+                    <div style="width: 40px; height: 40px; background: var(--gray); color: #A0A0A0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">
+                        2
+                    </div>
+                    <p style="color: #A0A0A0;">Review</p>
+                </div>
+                <div style="flex: 1; height: 2px; background: var(--gray);"></div>
+                <div style="flex: 1; text-align: center;">
+                    <div style="width: 40px; height: 40px; background: var(--gray); color: #A0A0A0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">
+                        3
+                    </div>
+                    <p style="color: #A0A0A0;">Confirm</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 2rem;">
+                <div class="creative-info" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                    <div style="width: 60px; height: 60px; background: var(--gradient); border-radius: 50%;"></div>
+                    <div>
+                        <h2 style="margin: 0;">DJ Nova</h2>
+                        <p style="color: #A0A0A0; margin: 0.25rem 0;">Afro House Specialist • Lagos, Nigeria</p>
+                        <p style="color: var(--primary);">⭐ 4.9 (124 reviews)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <form id="bookingForm">
+                    <h2 style="margin-bottom: 2rem;">Booking Details</h2>
+
+                    <div class="form-group">
+                        <label>Service Type</label>
+                        <select name="service" class="form-control" required>
+                            <option value="">Select a service</option>
+                            <option value="Live Performance">Live Performance - From $500</option>
+                            <option value="Virtual DJ Set">Virtual DJ Set - $200</option>
+                            <option value="Custom Mix">Custom Mix - $150</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Event Date</label>
+                        <input type="date" name="date" class="form-control" required>
+                        <p style="color: #A0A0A0; font-size: 0.9rem; margin-top: 0.5rem;">
+                            <i class="fas fa-info-circle"></i> Book at least 7 days in advance
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" name="location" class="form-control" placeholder="Venue or virtual event details" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Budget</label>
+                        <div style="position: relative;">
+                            <span style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: #A0A0A0;">$</span>
+                            <input type="number" name="budget" class="form-control" placeholder="0.00" style="padding-left: 2.5rem;" required>
+                        </div>
+                        <p style="color: #A0A0A0; font-size: 0.9rem; margin-top: 0.5rem;">
+                            <i class="fas fa-info-circle"></i> This is an initial quote. Final price may vary based on requirements.
+                        </p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional Requirements</label>
+                        <textarea name="message" class="form-control" rows="4" placeholder="Tell the creative about your event, specific requirements, or any special requests..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" required>
+                            I agree to the <a href="#" style="color: var(--primary);">Booking Terms</a> and understand that payment will be held in escrow until completion.
+                        </label>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <button type="submit" class="btn" style="flex: 1; padding: 1rem;">
+                            <i class="fas fa-paper-plane"></i> Send Booking Request
+                        </button>
+                        <a href="profile.html" class="btn-outline" style="flex: 1; text-align: center; padding: 1rem;">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Booking Information -->
+            <div class="card" style="margin-top: 3rem; background: rgba(0, 212, 170, 0.1);">
+                <h3><i class="fas fa-info-circle"></i> How Booking Works</h3>
+                <ol style="margin: 1rem 0 0 1.5rem; color: #A0A0A0;">
+                    <li>Submit your request with details</li>
+                    <li>Creative reviews and accepts/declines within 48 hours</li>
+                    <li>If accepted, make secure payment (held in escrow)</li>
+                    <li>Creative performs service or attends event</li>
+                    <li>Payment released to creative after completion</li>
+                    <li>Leave review for each other</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
